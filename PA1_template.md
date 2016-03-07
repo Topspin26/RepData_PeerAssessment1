@@ -47,7 +47,8 @@ median(stepsPerDay$steps)
 activityPerInterval1 = ddply(data, .(interval1), summarize, steps=mean(steps, na.rm = T))
 
 g = ggplot(activityPerInterval1, aes(interval1, steps))
-p = g + geom_line() + scale_x_datetime(date_labels = "%H:%M")
+p = g + geom_line() + scale_x_datetime(date_labels = "%H:%M") +
+    xlab('interval')
 print(p)
 ```
 
